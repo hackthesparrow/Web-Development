@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Div and Span Layout Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #e3f2fd, #fffde7);
+            color: #333;
+        }
+
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border: 2px solid #90caf9;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .header {
+            background-color: #1565c0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header span {
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+
+
+        .nav {
+            background-color: #bbdefb;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .nav span {
+            display: inline-block;
+            margin: 0 15px;
+            color: #0d47a1;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav span:hover {
+            color: #1a237e;
+            text-decoration: underline;
+        }
+
+
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .left,
+        .right {
+            flex: 1;
+            min-width: 280px;
+            padding: 15px;
+            border: 2px solid #bbdefb;
+            border-radius: 8px;
+            background: #f9fbff;
+        }
+
+        .left h2,
+        .right h2 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #90caf9;
+            padding-bottom: 5px;
+        }
+
+        .left span,
+        .right span {
+            background-color: #e3f2fd;
+            padding: 3px 8px;
+            border-radius: 5px;
+            color: #0d47a1;
+            font-weight: 600;
+        }
+
+
+        .footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1565c0;
+            color: white;
+            border-radius: 0 0 10px 10px;
+            font-size: 14px;
+        }
+
+        .footer span {
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Welcome to <span>HARSH’s</span> Webpage</h1>
+            <p>Using <span>&lt;div&gt;</span> and <span>&lt;span&gt;</span> Elements</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav">
+            <span>Home</span>
+            <span>About</span>
+            <span>Projects</span>
+            <span>Contact</span>
+        </div>
+
+
+        <div class="content">
+            <div class="left">
+                <h2>About This Page</h2>
+                <p>This webpage is created using only <span>&lt;div&gt;</span> and <span>&lt;span&gt;</span> tags for
+                    layout.</p>
+                <p>It demonstrates how these basic elements can structure and style a webpage using CSS.</p>
+            </div>
+
+            <div class="right">
+                <h2>Why Use Div and Span?</h2>
+                <p><span>Div</span> is a block-level element — it creates sections or blocks of content.</p>
+                <p><span>Span</span> is an inline element — used to style small parts of text or inline content.</p>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            Designed by <span>HARSH</span> | CSS Layout Demo
+        </div>
+    </div>
+</body>
+
+</html>

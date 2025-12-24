@@ -1,0 +1,102 @@
+<!doctype html>
+<html >
+
+<head>
+  <title>Advanced CSS Demo — Box Model & Backgrounds</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="Practical_07.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="logo">CSS Playground</h1>
+      <nav class="top-nav">
+        <a href="#boxmodel">Box Model</a>
+        <a href="#backgrounds">Backgrounds</a>
+        <a href="#cards">Borders & Padding</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+
+    <section class="hero" id="backgrounds">
+      <div class="hero-content">
+        <h2>Background Images & Overlays</h2>
+        <p>Learn how to use background-image, linear-gradient overlays, multiple backgrounds and
+          <code>background-size: cover</code>.</p>
+        <a class="btn" href="#boxmodel">See Box Model</a>
+      </div>
+    </section>
+
+
+    <section class="demo-section" id="boxmodel">
+      <h2>Box Model — Content, Padding, Border, Margin</h2>
+
+      <div class="box-demo">
+
+        <div class="box margin-area">
+          <div class="box border-area">
+            <div class="box padding-area">
+              <div class="box content-area">
+                <strong>Content</strong>
+                <p>This inner box represents the content area. Resize the window to see responsive behavior.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="box-info">
+          <h3>Current values</h3>
+          <ul>
+            <li><strong>Content:</strong> Width/Height</li>
+            <li><strong>Padding:</strong> 24px (applied to padding-area)</li>
+            <li><strong>Border:</strong> 6px solid (applied to border-area)</li>
+            <li><strong>Margin:</strong> 28px (applied as spacing around margin-area)</li>
+            <li><strong>box-sizing:</strong> border-box (so border/padding included in width)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="demo-section" id="cards">
+      <h2>Borders, Padding & Spacing (Cards)</h2>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-media"></div>
+          <h3>Card with strong border</h3>
+          <p>Border, border-radius and padding create a neat card. Notice the subtle box-shadow for elevation.</p>
+        </article>
+
+        <article class="card subtle">
+          <div class="card-media small"></div>
+          <h3>Subtle card</h3>
+          <p>Smaller padding, thinner border — useful for compact widgets and lists.</p>
+        </article>
+
+        <article class="card glass">
+          <div class="card-media small"></div>
+          <h3>Glass effect</h3>
+          <p>Transparent background, inner padding and frosted effect using backdrop-filter (supported browsers).</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2025 CSS Playground — Practice margins, padding, borders & backgrounds</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

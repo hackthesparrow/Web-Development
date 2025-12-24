@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Responsive Web Page with Media Queries</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* 📱 Mobile-first base styling */
+    body {
+      background: linear-gradient(135deg, #e3f2fd, #fffde7);
+      color: #333;
+      line-height: 1.6;
+      padding: 1rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1565c0;
+      color: white;
+      border-radius: 0.5rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0.3rem;
+      padding: 0.5rem 1rem;
+      background: #1976d2;
+      color: white;
+      border-radius: 0.4rem;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #0d47a1;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+
+    .card h2 {
+      color: #1565c0;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* 💻 Tablet View (min-width: 600px) */
+    @media (min-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      nav a {
+        font-size: 1.1rem;
+        margin: 0.5rem;
+      }
+
+      .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card {
+        width: 45%;
+      }
+    }
+
+    /* 🖥️ Desktop View (min-width: 900px) */
+    @media (min-width: 900px) {
+      body {
+        padding: 2rem 6rem;
+      }
+
+      header {
+        text-align: left;
+        padding: 1.5rem 2rem;
+      }
+
+      nav {
+        text-align: right;
+        margin: 1rem 0;
+      }
+
+      .container {
+        gap: 2rem;
+      }
+
+      .card {
+        width: 30%;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1> Responsive Web Page</h1>
+    <p>Designed using Media Queries and Mobile-First Approach</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section class="container">
+    <div class="card">
+      <h2>Mobile-First Design</h2>
+      <p>This webpage is first designed for mobile devices, ensuring it looks great on smaller screens.</p>
+    </div>
+
+    <div class="card">
+      <h2>Media Queries</h2>
+      <p>Media queries adjust the layout for tablets and desktops, providing a responsive and flexible experience.</p>
+    </div>
+
+    <div class="card">
+      <h2>Flexible Units</h2>
+      <p>We used rem, %, and vw units to make the design scale smoothly across different devices.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 | Created by <b>HARSH</b> — Responsive Web Design Example
+  </footer>
+</body>
+
+</html>
