@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Light Toggle UI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --primary:#2563eb;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#e0e7ff,#f8fafc);
+  color:var(--text);
+}
+
+.card{
+  width:360px;
+  padding:28px;
+  background:var(--card);
+  border-radius:20px;
+  box-shadow:0 20px 45px rgba(0,0,0,0.12);
+  text-align:center;
+}
+
+h2{
+  margin-bottom:6px;
+  font-size:22px;
+}
+
+.subtitle{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:14px;
+  background:var(--primary);
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+button:hover{
+  background:#1d4ed8;
+  transform:translateY(-2px);
+}
+
+.content{
+  margin-top:22px;
+  padding:18px;
+  border-radius:16px;
+  background:#f1f5f9;
+  opacity:0;
+  transform:translateY(15px);
+  pointer-events:none;
+  transition:0.4s ease;
+}
+
+.content.show{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.icon{
+  font-size:36px;
+  margin-bottom:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Modern Toggle Card</h2>
+  <div class="subtitle">Light • Clean • Smooth</div>
+
+  <button id="toggleBtn">Show Content</button>
+
+  <div id="box" class="content">
+    <div class="icon">✨</div>
+    <p>
+      Ye ek <b>modern light UI</b> example hai jisme  
+      JavaScript se content smoothly show / hide hota hai.
+    </p>
+  </div>
+</div>
+
+<script>
+const btn = document.getElementById("toggleBtn");
+const box = document.getElementById("box");
+
+btn.addEventListener("click", () => {
+  box.classList.toggle("show");
+
+  btn.textContent = box.classList.contains("show")
+    ? "Hide Content"
+    : "Show Content";
+});
+</script>
+
+</body>
+</html>
