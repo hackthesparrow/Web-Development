@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Pro Arithmetic Calculator</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        *{ box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(-45deg, #ff6a88, #ff99ac, #6a11cb, #2575fc);
+            background-size: 400% 400%;
+            animation: bgMove 10s infinite ease;
+        }
+
+        @keyframes bgMove {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .calculator {
+            width: 410px;
+            padding: 28px 32px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(12px);
+            color: #fff;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background: rgba(255,255,255,0.25);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: 0.25s;
+        }
+
+        input:focus {
+            background: rgba(255,255,255,0.4);
+            box-shadow: 0 0 10px rgba(255,255,255,0.4);
+            transform: scale(1.03);
+        }
+
+        .btn-group {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        button {
+            width: 48%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ff6a88, #ff99ac);
+            color: #fff;
+            cursor: pointer;
+            transition: 0.25s ease;
+            box-shadow: 0 5px 15px rgba(255,106,136,0.5);
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 22px rgba(255,106,136,0.7);
+        }
+
+        #resultBox {
+            margin-top: 18px;
+            padding: 16px;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.25);
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <h2>Pro Calculator </h2>
+
+        <div class="input-box">
+            <label>Enter First Number:</label>
+            <input type="number" id="num1" placeholder="Type a number...">
+        </div>
+
+        <div class="input-box">
+            <label>Enter Second Number:</label>
+            <input type="number" id="num2" placeholder="Type another number...">
+        </div>
+
+        <div class="btn-group">
+            <button onclick="calc('add')">➕ Add</button>
+            <button onclick="calc('sub')">➖ Subtract</button>
+            <button onclick="calc('mul')">✖ Multiply</button>
+            <button onclick="calc('div')">➗ Divide</button>
+            <button onclick="calc('mod')">% Modulus</button>
+            <button onclick="calc('square')">x² Square</button>
+            <button onclick="calc('sqrt')">√ Square Root</button>
+            <button onclick="calc('power')">xʸ Power</button>
+        </div>
+
+        <div id="resultBox">Result will appear here...</div>
+    </div>
+
+    <script>
+        function getNumbers() {
+            let a = document.getElementById("num1").value;
+            let b = document.getElementById("num2").value;
+
+            return { a: parseFloat(a), b: parseFloat(b) };
+        }
+
+        function calc(type) {
+            let { a, b } = getNumbers();
+            let result = document.getElementById("resultBox");
+
+            if (type !== 'square' && type !== 'sqrt' && (isNaN(a) || isNaN(b))) {
+                result.innerHTML = "⚠ Enter both numbers!";
+                return;
+            }
+
+            if (type === 'add') result.innerHTML = `Result: <b>${a + b}</b>`;
+            if (type === 'sub') result.innerHTML = `Result: <b>${a - b}</b>`;
+            if (type === 'mul') result.innerHTML = `Result: <b>${a * b}</b>`;
+            
+            if (type === 'div') {
+                if (b === 0) return result.innerHTML = "❌ Cannot divide by zero!";
+                result.innerHTML = `Result: <b>${(a / b).toFixed(2)}</b>`;
+            }
+
+            if (type === 'mod') result.innerHTML = `Result: <b>${a % b}</b>`;
+
+            if (type === 'square') {
+                if (isNaN(a)) return result.innerHTML = "⚠ Enter first number!";
+                result.innerHTML = `Square: <b>${a * a}</b>`;
+            }
+
+            if (type === 'sqrt') {
+                if (isNaN(a)) return result.innerHTML = "⚠ Enter first number!";
+                result.innerHTML = `Square Root: <b>${Math.sqrt(a).toFixed(2)}</b>`;
+            }
+
+            if (type === 'power') result.innerHTML = `Power: <b>${Math.pow(a, b)}</b>`;
+        }
+    </script>
+
+</body>
+</html>

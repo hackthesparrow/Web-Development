@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>DOM Manipulation </title>
+
+    <style>
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .box {
+            width: 400px;
+            background: #ffffff;
+            color: #000;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #2575fc;
+            color: white;
+            border: none;
+            font-size: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 6px;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* ⭐ New Beautiful Hover Effect */
+        button:hover {
+            background: #6a11cb;
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.5);
+        }
+
+        #textBox {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* ⭐ Text box hover effect */
+        #textBox:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>DOM Manipulation </h2>
+
+        <div id="textBox">This is the default text</div>
+
+        <button onclick="changeText()">Change Text</button>
+        <button onclick="changeColor()">Change Background</button>
+        <button onclick="changeFont()">Change Font + Size</button>
+        <button onclick="resetBox()">Reset</button>
+    </div>
+
+    <script>
+        function changeText() {
+            const box = document.getElementById("textBox");
+            box.innerHTML = "✔ Text Changed using <b>innerHTML</b>";
+        }
+
+        function changeColor() {
+            const box = document.querySelector("#textBox");
+            box.style.background = "#ffe066";
+            box.style.color = "#000";
+            box.style.transform = "scale(1.07)";
+        }
+
+        function changeFont() {
+            const box = document.getElementById("textBox");
+            box.style.fontSize = "24px";
+            box.style.fontFamily = "Courier New";
+            box.style.color = "#2575fc";
+        }
+
+        function resetBox() {
+            const box = document.getElementById("textBox");
+            box.innerHTML = "This is the default text";
+            box.style.background = "#f1f1f1";
+            box.style.color = "#000";
+            box.style.fontSize = "18px";
+            box.style.fontFamily = "Poppins";
+            box.style.transform = "scale(1)";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>CSS Selectors Demonstration</title>
+  <style>
+    /*  Universal Selector */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e3f2fd, #f9fbe7);
+      color: #333;
+      line-height: 1.6;
+      padding: 30px;
+    }
+
+    /*  ID Selector */
+    #main-title {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 25px;
+      font-size: 2.2em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      letter-spacing: 1px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 850px;
+      margin: auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 25px 35px;
+      transition: all 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.01);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    /*  Class Selector */
+    .highlight {
+      background-color: #bbdefb;
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #0d47a1;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .highlight:hover {
+      background-color: #90caf9;
+    }
+
+    
+    .content p {
+      margin: 12px 0;
+      padding: 12px 15px;
+      border-left: 4px solid #64b5f6;
+      background-color: #e3f2fd;
+      border-radius: 6px;
+      transition: 0.3s ease;
+    }
+
+    .content p:hover {
+      background-color: #bbdefb;
+    }
+
+    /*  Group Selector */
+    h2, h3 {
+      color: #1976d2;
+      border-bottom: 2px solid #90caf9;
+      padding-bottom: 5px;
+      margin-top: 25px;
+      transition: color 0.3s ease;
+    }
+
+    h2:hover, h3:hover {
+      color: #0d47a1;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer span {
+      color: #1565c0;
+      font-weight: bold;
+    }
+
+    
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #1976d2;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="main-title">🎨 CSS Selectors Demonstration</h1>
+
+  <div class="container content">
+    <h2>1️⃣ Class Selector Example</h2>
+    <p>The <span class="highlight">class selector</span> selects all elements with a specific class name and is reusable across the page.</p>
+
+    <h2>2️⃣ ID Selector Example</h2>
+    <p>The <span class="highlight">ID selector</span> targets a single unique element. Here, our main title uses an ID selector named <code>#main-title</code>.</p>
+
+    <h2>3️⃣ Descendant Selector Example</h2>
+    <p>The <span class="highlight">descendant selector</span> styles only the <code>&lt;p&gt;</code> tags that are inside the <code>.content</code> container.</p>
+
+    <h2>4️⃣ Group Selector Example</h2>
+    <p>With the <span class="highlight">group selector</span>, multiple elements like <code>h2</code> and <code>h3</code> can share the same style rules.</p>
+
+    <h2>5️⃣ Universal Selector Example</h2>
+    <p>The <span class="highlight">universal selector (*)</span> applies base styles such as font, margin, and padding to every element in this webpage.</p>
+
+    <a href="#" class="btn">Learn More</a>
+  </div>
+
+  <footer>
+    Created by <span>HARSH</span> | Stylish Demo of CSS Selectors 
+  </footer>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Harsh Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e5e7eb;
+            font-family: Arial, sans-serif;
+            color: #4775d7;
+        }
+
+        header {
+            background: #111827;
+            color: #fff;
+            padding: 16px;
+            text-align: center;
+            font-size: 22px;
+            letter-spacing: .03em;
+        }
+
+        .layout {
+            padding: 16px;
+        }
+
+        .sidebar,
+        .content {
+            background: #fff;
+            padding: 16px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+            margin-bottom: 16px;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin-top: 8px;
+            line-height: 26px;
+            font-size: 14px;
+        }
+
+        .sidebar li {
+            margin-bottom: 4px;
+        }
+
+        .content h1 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .content h2 {
+            font-size: 18px;
+            margin-top: 16px;
+            margin-bottom: 4px;
+        }
+
+        .content p {
+            font-size: 14px;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 18px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .profile-grid div {
+            padding: 2px 0;
+        }
+
+        .profile-grid div:nth-child(odd) {
+            font-weight: 600;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .chip {
+            padding: 4px 10px;
+            background: #e5e7eb;
+            border-radius: 999px;
+            font-size: 13px;
+        }
+
+        .cards {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .card {
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .card p {
+            font-size: 13px;
+            line-height: 1.4;
+            margin-top: 4px;
+        }
+
+        .code-note {
+            font-size: 13px;
+            margin-top: 12px;
+            font-style: italic;
+            color: #4b5563;
+        }
+
+        @media(max-width:599px) {
+            body {
+                background: #f3f4f6;
+                font-family: "Helvetica Neue", Arial, sans-serif;
+            }
+
+            header {
+                background: #1f2937;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(min-width:600px) and (max-width:900px) {
+            body {
+                background: #fff3e0;
+                font-family: Georgia, "Times New Roman", serif;
+                color: #4b2400;
+            }
+
+            header {
+                background: #fb8c00;
+                color: #fffaf0;
+            }
+
+            .layout {
+                padding: 18px;
+            }
+
+            .sidebar {
+                width: 30%;
+                float: left;
+                margin-bottom: 0;
+                background: #ffe0b2;
+            }
+
+            .content {
+                width: 68%;
+                float: right;
+                background: #fff8ee;
+            }
+
+            .layout::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            .chip {
+                background: #ffe8c2;
+            }
+
+            .card {
+                background: #fff7e4;
+                border-color: #ffcc80;
+            }
+        }
+
+        @media(min-width:901px) {
+            body {
+                background: #020617;
+                font-family: "Segoe UI", system-ui, sans-serif;
+                color: #e5e7eb;
+            }
+
+            header {
+                background: #020617;
+                border-bottom: 1px solid #1f2937;
+            }
+
+            .layout {
+                display: flex;
+                gap: 20px;
+                padding: 22px;
+            }
+
+            .sidebar {
+                width: 260px;
+                flex-shrink: 0;
+                background: #020617;
+                border: 1px solid #1f2937;
+                box-shadow: none;
+            }
+
+            .sidebar h2 {
+                color: #e5e7eb;
+            }
+
+            .sidebar ul {
+                color: #cbd5f5;
+            }
+
+            .content {
+                flex: 1;
+                background: #020617;
+                border: 1px solid #1f2937;
+                box-shadow: none;
+            }
+
+            .content h1,
+            .content h2 {
+                color: #f9fafb;
+            }
+
+            .content p {
+                color: #9ca3af;
+            }
+
+            .cards {
+                margin-top: 20px;
+                display: flex;
+                gap: 14px;
+            }
+
+            .card {
+                flex: 1;
+                background: #0b1120;
+                border-color: #1f2937;
+            }
+
+            .card h3 {
+                color: #e5e7eb;
+            }
+
+            .card p {
+                color: #9ca3af;
+            }
+
+            .chip {
+                background: #111827;
+                color: #e5e7eb;
+            }
+
+            .code-note {
+                color: #6b7280;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>Dashboard</header>
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>Harsh Details</h2>
+            <ul>
+                <li>Name: Harsh Kumar Shandilya</li>
+                <li>Role: Student / Web Developer</li>
+                <li>Focus: HTML, CSS, Java</li>
+                <li>Goal: Full Stack Developer</li>
+                <li>Location: Bhilai,Chhattisgarh</li>
+            </ul>
+        </aside>
+        <main class="content">
+            <h1>Welcome Back!</h1>
+            <p>You are building strong fundamentals in HTML, CSS and Java. This dashboard shows your basic details and
+                your current learning focus.</p>
+            <h2>Profile Information</h2>
+            <div class="profile-grid">
+                <div>Full Name</div>
+                <div>Harsh Kumar Shandilya</div>
+                <div>Student ID</div>
+                <div>RU-25-10551</div>
+                <div>Course</div>
+                <div>Web Development / Programming</div>
+                <div>Main Languages</div>
+                <div>HTML, CSS, Java</div>
+                <div>Email</div>
+                <div>hshandilya2008@gmail.com</div>
+                <div>Contact</div>
+                <div>+91-7647088605</div>
+            </div>
+            <h2>Skills Focus</h2>
+            <p>Right now, you are mainly focusing on these topics:</p>
+            <div class="skills-list">
+                <span class="chip">HTML Structure</span>
+                <span class="chip">Semantic Tags</span>
+                <span class="chip">CSS Layout</span>
+                <span class="chip">Flexbox</span>
+                <span class="chip">Float &amp; Clear</span>
+                <span class="chip">Media Queries</span>
+                <span class="chip">Java Basics</span>
+                <span class="chip">Java Advance</span>
+            </div>
+            <h2>HTML, CSS, Java Learning</h2>
+            <p><strong>HTML</strong> defines the structure of a webpage. It controls headings, text, images, links,
+                lists, tables, forms, and the layout of the page. Every web page starts with HTML.</p>
+            <p><strong>CSS</strong> is used for styling. It manages colors, fonts, spacing, borders, and layout. With
+                Flexbox, floats, and media queries, you can create responsive designs that work on mobile, tablet, and
+                desktop.</p>
+            <p><strong>Java</strong> is a powerful programming language used for backend development, Android apps, and
+                desktop applications. You are learning loops, arrays, methods, classes, and object oriented programming
+                concepts.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>HTML Practice</h3>
+                    <p>Create small projects like forms, tables, profile pages and simple blogs. Use semantic tags such
+                        as header, nav, main, section and footer.</p>
+                </div>
+                <div class="card">
+                    <h3>CSS &amp; Layout</h3>
+                    <p>Practice responsive layouts using flexbox, float and clear. Experiment with colors, fonts,
+                        margins and padding to make clean designs.</p>
+                </div>
+                <div class="card">
+                    <h3>Javascript Concepts</h3>
+                    <p>Write programs using loops, functions and classes. Solve small coding questions every day to
+                        improve logic and confidence.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>

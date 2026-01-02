@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Difference between &lt;ol&gt; and &lt;ul&gt; Tags</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 40px;
+            color: #333;
+            background-color: lightpink;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #c0392b;
+        }
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+        td {
+            background-color: #fdfefe;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Difference between &lt;ol&gt; and &lt;ul&gt; Tags</h1>
+
+    <p style="text-align: center;">
+        The <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> tags in HTML are used to create lists,
+        but they display items differently.
+    </p>
+
+    <h2> Ordered List - &lt;ol&gt;</h2>
+    <p>
+        The <code>&lt;ol&gt;</code> tag creates a <b>numbered list</b>. It is used when the order of items matters,
+        such as learning steps in <b>Cyber Security</b> or <b>Machine Learning</b>.
+    </p>
+
+    <pre>
+&lt;ol&gt;
+    &lt;li&gt;Learn Basics of Networking&lt;/li&gt;
+    &lt;li&gt;Understand Cyber Threats and Attacks&lt;/li&gt;
+    &lt;li&gt;Implement Security Tools and Firewalls&lt;/li&gt;
+&lt;/ol&gt;
+    </pre>
+
+    <p><b>Output:</b></p>
+    <ol>
+        <li>Learn Basics of Networking</li>
+        <li>Understand Cyber Threats and Attacks</li>
+        <li>Implement Security Tools and Firewalls</li>
+    </ol>
+
+    <h2> Unordered List - &lt;ul&gt;</h2>
+    <p>
+        The <code>&lt;ul&gt;</code> tag creates a <b>bulleted list</b>. It is used when the order of items does not matter,
+        such as listing fields in <b>Artificial Intelligence</b> or <b>Machine Learning</b>.
+    </p>
+
+    <pre>
+&lt;ul&gt;
+    &lt;li&gt;Artificial Intelligence&lt;/li&gt;
+    &lt;li&gt;Machine Learning&lt;/li&gt;
+    &lt;li&gt;Deep Learning&lt;/li&gt;
+    &lt;li&gt;Cyber Security&lt;/li&gt;
+&lt;/ul&gt;
+    </pre>
+
+    <p><b>Output:</b></p>
+    <ul>
+        <li>Artificial Intelligence</li>
+        <li>Machine Learning</li>
+        <li>Deep Learning</li>
+        <li>Cyber Security</li>
+    </ul>
+
+    <h2>Summary Table</h2>
+    <table>
+        <tr>
+            <th>Tag</th>
+            <th>Type of List</th>
+            <th>Marker</th>
+            <th>Example Use</th>
+        </tr>
+        <tr>
+            <td>&lt;ol&gt;</td>
+            <td>Ordered List</td>
+            <td>1, 2, 3 or a, b, c</td>
+            <td>Steps in Cyber Security or ML process</td>
+        </tr>
+        <tr>
+            <td>&lt;ul&gt;</td>
+            <td>Unordered List</td>
+            <td>• Bullets</td>
+            <td>Listing AI or ML topics</td>
+        </tr>
+    </table>
+
+</body>
+</html>
